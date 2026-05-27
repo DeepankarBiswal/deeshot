@@ -6,12 +6,12 @@ type NavbarProps = {
 
 export default function Navbar({ activePage, onNavigate }: NavbarProps) {
   return (
-    <nav className="bg-white px-8 py-4 border-b border-gray-100">
+    <nav className="bg-white px-8 py-6 border-b border-gray-100">
       {/* Logo */}
-      <p className="text-sm tracking-[0.25em] font-light mb-3 text-left">DeeSHOT</p>
+      <p className="text-sm tracking-[0.25em] font-light mb-3 text-right">DeeSHOT</p>
 
       {/* Nav links */}
-      <ul className="flex gap-6">
+      <ul className="flex gap-8 justify-end">
         {navLinks.map((link) => (
           <li key={link}>
             <button
