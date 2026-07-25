@@ -1,12 +1,12 @@
-// src/components/Clouds2.tsx
+import cloudsImage from "../assets/images/clouds.png";
+
 export default function Clouds2() {
   return (
-    <div className="min-h-screen w-full bg-black flex items-center justify-center">
-      {/* Full-page image */}
+    <div className="relative min-h-screen w-full overflow-hidden bg-black">
       <img
-        src="\src\assets\images\clouds.png"   // ← change this path
-        alt="Page image"
-        className="w-full h-full object-cover"
+        src={cloudsImage}
+        alt="Cloudy background"
+        className="absolute inset-0 w-full h-full object-cover"
       />
     </div>
   );
