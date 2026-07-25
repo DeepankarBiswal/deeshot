@@ -20,7 +20,7 @@ export default function Hero({ flowerImage, oceanImage }: HeroProps) {
       <div className="absolute inset-0 bg-black/10" />
 
       {/* LAYER 2 — content grid on top of the ocean */}
-      <div className="relative z-10 h-full flex items-center justify-between px-8">
+      <div className="relative z-10 h-full flex items-center justify-between px-17 ">
         {/* Left: text block */}
         <div className="max-w-xs">
           <h1 className="text-6xl font-light text-white mb-4">Hello!</h1>
@@ -36,7 +36,7 @@ export default function Hero({ flowerImage, oceanImage }: HeroProps) {
         </div>
 
         {/* Right: flower photo card */}
-        <div className="h-150 w-75 shrink-0 overflow-hidden shadow-2xl">
+        <div className="h-150 w-75 shrink-0 overflow-hidden py-8 ">
           <img
             src={flowerImage}
             alt="Nature photography"

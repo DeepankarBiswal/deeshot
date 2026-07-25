@@ -1,30 +1,31 @@
-const navLinks = ["About", "Link", "Contact"];
-type NavbarProps = {
-  activePage: string;
-  onNavigate: (page: string) => void;
-};
+import { NavLink } from "react-router-dom";
 
-export default function Navbar({ activePage, onNavigate }: NavbarProps) {
+const navLinks = [
+  { label: "About", path: "/about" },
+  { label: "Link", path: "/link" },
+  { label: "Contact", path: "/contact" },
+];
+
+export default function Navbar() {
   return (
     <nav className="bg-white px-8 py-6 border-b border-gray-100">
-      {/* Logo */}
-      <p className="text-sm tracking-[0.25em] font-light mb-3 text-right">DeeSHOT</p>
+      <p className="text-sm tracking-[0.25em] font-sans font-stretch-90% mb-3 text-left">DeeSHOT</p>
 
-      {/* Nav links */}
-      <ul className="flex gap-8 justify-end">
+      <ul className="flex gap-10 text-left py-3">
         {navLinks.map((link) => (
-          <li key={link}>
-            <button
-              onClick={() => onNavigate(link)}
-              className={`text-sm tracking-wide transition-all duration-200 bg-transparent border-none cursor-pointer
-                ${
-                  activePage === link
+          <li key={link.path}>
+            <NavLink
+              to={link.path}
+              className={({ isActive }) =>
+                `text-sm tracking-wide transition-all duration-200 ${
+                  isActive
                     ? "border-b border-black text-black"
                     : "text-gray-500 hover:text-black"
-                }`}
+                }`
+              }
             >
-              {link}
-            </button>
+              {link.label}
+            </NavLink>
           </li>
         ))}
       </ul>
